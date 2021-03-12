@@ -10,7 +10,7 @@ const Post = require("../../models/Post");
 
 // @route   POST api/posts
 // @desc    Create a post
-// @access  Provate
+// @access  Private
 router.post(
   "/",
   [auth, [check("text", "Text is required").not().isEmpty()]],
@@ -40,4 +40,16 @@ router.post(
   }
 );
 
+// @route   GET api/posts
+// @desc    Get all posts
+// @access  Private
+router.get("/", auth, async (req, res) => {
+  try {
+    const posts = await Post.find().sort({ date: -1 });
+    res.json(posts);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server error");
+  }
+});
 module.exports = router;
