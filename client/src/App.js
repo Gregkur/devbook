@@ -6,6 +6,7 @@ import store from "./store";
 
 import Navbar from "./componenets/layout/Navbar";
 import Landing from "./componenets/layout/Landing";
+import Alert from "./componenets/layout/Alert";
 import Login from "./componenets/auth/Login";
 import Register from "./componenets/auth/Register";
 
@@ -18,6 +19,7 @@ const App = () => (
         <Navbar />
         <Route exact path="/" component={Landing} />
         <section className="container">
+          <Alert/>
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
