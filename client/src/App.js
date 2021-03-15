@@ -3,14 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
-import setAuthToken from './utils/setAuthToken'
-import {loadUser} from './actions/auth'
+import setAuthToken from "./utils/setAuthToken";
+import { loadUser } from "./actions/auth";
 
 import Navbar from "./componenets/layout/Navbar";
 import Landing from "./componenets/layout/Landing";
 import Alert from "./componenets/layout/Alert";
 import Login from "./componenets/auth/Login";
 import Register from "./componenets/auth/Register";
+import Dashboard from "./componenets/dashboard/Dashboard";
+import PrivateRoute from "./componenets/routing/PrivateRoute";
 
 import "./App.css";
 
@@ -31,6 +33,7 @@ const App = () => {
           <section className="container">
             <Alert />
             <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </Switch>
