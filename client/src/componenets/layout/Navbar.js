@@ -12,6 +12,12 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
           <span className="hide-sm"> Logout</span>
         </a>
       </li>
+      <li>
+        <i className="fas fa-user"></i>{" "}
+        <Link to="/dashboard">
+          <span className="hide-sm"> Dashboard</span>
+        </Link>
+      </li>
     </ul>
   );
   const guestLinks = (
