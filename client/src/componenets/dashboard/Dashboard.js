@@ -13,7 +13,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   return loading && profile == null ? (
     <Spinner />
   ) : (
@@ -22,8 +22,22 @@ const Dashboard = ({
       <p class="lead">
         <i class="fas fa-user"></i> Welcome {user && user.name}
       </p>
+      {console.log(user)}
       {profile !== null ? (
-        <></>
+        <>
+          {" "}
+          <div class="dash-buttons">
+            <a href="edit-profile.html" class="btn btn-light">
+              <i class="fas fa-user-circle text-primary"></i> Edit Profile
+            </a>
+            <a href="add-experience.html" class="btn btn-light">
+              <i class="fab fa-black-tie text-primary"></i> Add Experience
+            </a>
+            <a href="add-education.html" class="btn btn-light">
+              <i class="fas fa-graduation-cap text-primary"></i> Add Education
+            </a>
+          </div>
+        </>
       ) : (
         <>
           <p>You have not yet setup your profile, please add some info</p>
@@ -32,17 +46,6 @@ const Dashboard = ({
           </Link>
         </>
       )}
-      <div class="dash-buttons">
-        <a href="edit-profile.html" class="btn btn-light">
-          <i class="fas fa-user-circle text-primary"></i> Edit Profile
-        </a>
-        <a href="add-experience.html" class="btn btn-light">
-          <i class="fab fa-black-tie text-primary"></i> Add Experience
-        </a>
-        <a href="add-education.html" class="btn btn-light">
-          <i class="fas fa-graduation-cap text-primary"></i> Add Education
-        </a>
-      </div>
     </>
   );
 };
