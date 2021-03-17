@@ -15,14 +15,14 @@ const Dashboard = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
   return loading && profile == null ? (
-    <Spinner />
+    <></>
   ) : (
     <>
+      {loading && <Spinner />}
       <h1 class="large text-primary">Dashboard</h1>
       <p class="lead">
         <i class="fas fa-user"></i> Welcome {user && user.name}
       </p>
-      {console.log(user)}
       {profile !== null ? (
         <>
           {" "}
