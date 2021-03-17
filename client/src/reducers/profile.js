@@ -13,9 +13,9 @@ function profileReducer(state = initialState, action) {
   switch (type) {
     case GET_PROFILE:
       return {
+        loading: false,
         ...state,
         profile: payload,
-        loading: false,
       };
     case PROFILE_ERROR:
       return {

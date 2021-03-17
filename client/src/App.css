@@ -160,10 +160,10 @@ img {
 }
 
 .alert {
-  position: absolute;
+  /* position: absolute;
   bottom: 5px;
   left: 5px;
-  width: 20rem;
+  width: 20rem; */
   text-align: center;
   padding: 0.8rem;
   margin: 1rem 1.5rem;
