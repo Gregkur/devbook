@@ -69,6 +69,7 @@ const AddExperience = ({ addExperience, history }) => {
             type="date"
             name="from"
             value={from}
+            required
             onChange={(e) => handleChange(e)}
           />
         </div>
