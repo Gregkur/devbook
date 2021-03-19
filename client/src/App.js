@@ -14,6 +14,7 @@ import Register from "./componenets/auth/Register";
 import Dashboard from "./componenets/dashboard/Dashboard";
 import PrivateRoute from "./componenets/routing/PrivateRoute";
 import CreateProfile from "./componenets/profile-forms/CreateProfile";
+import EditProfile from "./componenets/profile-forms/EditProfile";
 
 import "./App.css";
 
@@ -41,6 +42,11 @@ const App = () => {
                 exact
                 path="/create-profile"
                 component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/edit-profile"
+                component={EditProfile}
               />
             </Switch>
           </section>
