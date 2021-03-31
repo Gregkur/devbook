@@ -16,7 +16,7 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
-  console.log(profile);
+
   return (
     <Fragment>
       <h1 className="large text-primary">Dashboard</h1>
@@ -26,8 +26,13 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
-          {/* <Experience experience={profile.experience} />
-          <Education education={profile.education} /> */}
+
+          {profile.experience && (
+            <>
+              <Experience experience={profile.experience} />
+              {/* <Education education={profile.education} /> */}
+            </>
+          )}
 
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
