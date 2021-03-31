@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Spinner from "../layout/Spinner";
 import { getProfileById } from "../../actions/profile";
+import Spinner from "../layout/Spinner";
+import ProfileTop from './ProfileTop'
 
 const Profile = ({
   match,
@@ -30,6 +31,9 @@ const Profile = ({
                 Edit profile
               </Link>
             )}
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+          </div>
         </>
       )}
     </>
