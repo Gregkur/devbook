@@ -18,7 +18,8 @@ import CreateProfile from "./componenets/profile-forms/CreateProfile";
 import EditProfile from "./componenets/profile-forms/EditProfile";
 import AddExperience from "./componenets/profile-forms/AddExperience";
 import AddEducation from "./componenets/profile-forms/AddEducation";
-import Profiles from './componenets/profiles/Profiles'
+import Profiles from "./componenets/profiles/Profiles";
+import Profile from "./componenets/profile/Profile";
 
 import "./App.css";
 
@@ -52,6 +53,7 @@ const App = () => {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:id" component={Profile} />
               <PrivateRoute
                 exact
                 path="/create-profile"
