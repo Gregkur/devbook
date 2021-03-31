@@ -30,7 +30,7 @@ const Dashboard = ({
           {profile.experience && (
             <>
               <Experience experience={profile.experience} />
-              {/* <Education education={profile.education} /> */}
+              <Education education={profile.education} />
             </>
           )}
 
