@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
@@ -13,7 +14,26 @@ const Profile = ({
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
-  return <div>profile</div>;
+  return (
+    <>
+      {profile == null || loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <Link className="btn btn-light" to="/profiles">
+            Back to profiles
+          </Link>
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id === profile.user._id && (
+              <Link to="/edit-profile" className="btn btn-dark">
+                Edit profile
+              </Link>
+            )}
+        </>
+      )}
+    </>
+  );
 };
 
 Profile.propTypes = {
