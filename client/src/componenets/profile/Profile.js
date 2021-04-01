@@ -29,13 +29,6 @@ const Profile = ({
           <Link className="btn btn-light" to="/profiles">
             Back to profiles
           </Link>
-          {auth.isAuthenticated &&
-            auth.loading === false &&
-            auth.user._id === profile.user._id && (
-              <Link to="/edit-profile" className="btn btn-dark">
-                Edit profile
-              </Link>
-            )}
           <div className="profile-grid my-1">
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
@@ -63,8 +56,17 @@ const Profile = ({
                 <h4>No education added</h4>
               )}
             </div>
-            {profile.githubusername && <ProfileGithub username={profile.githubusername}/>}
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id === profile.user._id && (
+              <Link to="/edit-profile" className="btn btn-dark">
+                Edit your profile
+              </Link>
+            )}
         </>
       )}
     </>

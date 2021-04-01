@@ -1,12 +1,9 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-function Landing({ isAuthenticated }) {
-  if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
-  }
+function Landing() {
   return (
     <section className="landing">
       <div className="dark-overlay">
