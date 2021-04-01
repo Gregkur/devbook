@@ -9,6 +9,7 @@ import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
+import ProfileGithub from "./ProfileGithub";
 
 const Profile = ({
   match,
@@ -25,8 +26,6 @@ const Profile = ({
         <Spinner />
       ) : (
         <>
-          {console.log(profile.experience)}
-          {console.log(typeof profile.education)}
           <Link className="btn btn-light" to="/profiles">
             Back to profiles
           </Link>
@@ -64,6 +63,7 @@ const Profile = ({
                 <h4>No education added</h4>
               )}
             </div>
+            {profile.githubusername && <ProfileGithub username={profile.githubusername}/>}
           </div>
         </>
       )}
