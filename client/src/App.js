@@ -20,6 +20,7 @@ import AddExperience from "./componenets/profile-forms/AddExperience";
 import AddEducation from "./componenets/profile-forms/AddEducation";
 import Profiles from "./componenets/profiles/Profiles";
 import Profile from "./componenets/profile/Profile";
+import Posts from "./componenets/posts/Posts";
 
 import "./App.css";
 
@@ -74,6 +75,7 @@ const App = () => {
                 path="/add-education"
                 component={AddEducation}
               />
+              <PrivateRoute exact path="/posts" component={Posts} />
             </Switch>
           </section>
         </Fragment>

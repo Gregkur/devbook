@@ -10,6 +10,9 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
         <i className="fas fa-users"></i> <Link to="/">Developers</Link>
       </li>
       <li>
+        <i className="fas fa-comments"></i> <Link to="/posts">Forum</Link>
+      </li>
+      <li>
         <i className="fas fa-user"></i>{" "}
         <Link to="/dashboard">
           <span className="hide-sm"> Dashboard</span>
