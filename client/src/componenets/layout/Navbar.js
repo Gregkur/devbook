@@ -7,7 +7,7 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
   const authLinks = (
     <ul>
       <li>
-        <i className="fas fa-users"></i> <Link to="/">Developers</Link>
+        <i className="fas fa-users"></i> <Link to="/profiles">Developers</Link>
       </li>
       <li>
         <i className="fas fa-comments"></i> <Link to="/posts">Forum</Link>
