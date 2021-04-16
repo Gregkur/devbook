@@ -10,7 +10,7 @@ const Profiles = ({ profile: { profiles, loading }, getProfiles }) => {
     getProfiles();
   }, [getProfiles]);
   return (
-    <>
+    <section className="container">
       {loading ? (
         <Spinner />
       ) : (
@@ -21,15 +21,17 @@ const Profiles = ({ profile: { profiles, loading }, getProfiles }) => {
             developers.
           </p>
           <div className="profiles">
-              {profiles.length > 0? (
-                  profiles.map(profile =>(
-                      <ProfileItem key={profile._id} profile={profile}/>
-                  ))
-              ) : <h4>No profiles found</h4>}
+            {profiles.length > 0 ? (
+              profiles.map((profile) => (
+                <ProfileItem key={profile._id} profile={profile} />
+              ))
+            ) : (
+              <h4>No profiles found</h4>
+            )}
           </div>
         </>
       )}
-    </>
+    </section>
   );
 };
 

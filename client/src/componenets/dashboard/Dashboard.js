@@ -5,10 +5,7 @@ import { connect } from "react-redux";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
-import {
-  getCurrentProfile,
-  deleteAccount,
-} from "../../actions/profile";
+import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -21,7 +18,7 @@ const Dashboard = ({
   }, [getCurrentProfile]);
 
   return (
-    <Fragment>
+    <section className="container">
       <h1 className="large text-primary">Dashboard</h1>
       <p className="lead">
         <i className="fas fa-user" /> Welcome {user && user.name}
@@ -51,7 +48,7 @@ const Dashboard = ({
           </Link>
         </Fragment>
       )}
-    </Fragment>
+    </section>
   );
 };
 
